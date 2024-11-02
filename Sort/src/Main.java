@@ -1,20 +1,23 @@
-import sun.nio.ch.SelChImpl;
+import java.util.Arrays;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
- //    InsertionSort ss = new InsertionSort();
-     BubbleSort ss = new BubbleSort();
-//      SelectionSort ss = new SelectionSort();
-        int[] x = new int[100000000];
-        for (int i = 0; i < x.length; i++) {
-            x[i] = (int) (1 + (Math.random() * 10000));  // Generates random number between 1 and 10000
+       NoWay noWay = new NoWay();
+        // Create an array of size 10,000
+        int[] A = new int[1000];
+
+        // Fill the array with random numbers between 0 and 1000
+        Random random = new Random();
+        for (int i = 0; i < A.length; i++) {
+            A[i] = random.nextInt(1001);  // Generates random number between 0 and 1000
         }
 
         // Measure start time
         long startTime = System.currentTimeMillis();
 
-        // Perform bubble sort
-        ss.bubbleSort(x);
+
+       noWay.WhatIsThis(A);
 
         // Measure end time
         long endTime = System.currentTimeMillis();
@@ -23,7 +26,6 @@ public class Main {
         long executionTime = endTime - startTime;
         System.out.println("Execution time: " + executionTime + " milliseconds");
 
-        // Print sorted array
-//        ss.printArray(x);
+        System.out.println(Arrays.toString(A));
     }
 }
